@@ -1046,6 +1046,38 @@
             }]);
             
         }
+        
+        var cart = Snipcart.api.cart.get();
+            console.log(cart);
+            
+//            _learnq.push(['track', 'Started Checkout', {
+//              "$value" : 29.98,
+//              "ItemNames" : ["Winnie the Pooh", "A Tale of Two Cities"],
+//              "CheckoutURL": "http://www.example.com/path/to/checkout",
+//              "Items" : [
+//                {
+//                  "SKU" : "WINNIEPOOH",
+//                  "Name" : "Winnie the Pooh",
+//                  "Quantity" : 1,
+//                  "ItemPrice" : 9.99,
+//                  "RowTotal" : 9.99,
+//                  "ProductURL" : "http://www.example.com/path/to/product",
+//                  "ImageURL" : "http://www.example.com/path/to/product/image.png",
+//                  "ProductCategories" : ["Fiction", "Children"]
+//                },
+//                {
+//                  "SKU" : "TALEOFTWO",
+//                  "Name" : "A Tale of Two Cities",
+//                  "Quantity" : 1,
+//                  "ItemPrice" : 19.99,
+//                  "RowTotal" : 19.99,
+//                  "ProductURL" : "http://www.example.com/path/to/product2",
+//                  "ImageURL" : "http://www.example.com/path/to/product/image2.png",
+//                  "ProductCategories" : ["Fiction", "Classics"]
+//                }
+//              ]
+//            }]);
+        
     }); Snipcart.subscribe('shippingaddress.changed', function(address) {
       console.log(address);
           
