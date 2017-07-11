@@ -156,6 +156,17 @@
 	<noscript><img height="1" width="1" style="display:none"
 	src="https://www.facebook.com/tr?id=1888537424751398&ev=PageView&noscript=1"
 	/></noscript>
+    <script>
+      var _learnq = _learnq || [];
+
+      _learnq.push(['account', 'MDUTpU']);
+
+      (function () {
+      var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+      b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'a.klaviyo.com/media/js/analytics/analytics.js';
+      var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
+      })();
+    </script>
 
 	<script>
 		window.intercomSettings = {
@@ -388,6 +399,7 @@
 			<button class="button w-100 solid snipcart-add-plan corpsub hidden" id="corp-plan-9" data-plan-id="Office-Sub-100plus-BiWeekly" data-plan-quantity="1" data-plan-min-quantity="10" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Week" data-plan-intervalcount="2" data-plan-amount="15.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="../public/img/bar_order_mockup.png" data-plan-shippable="true">
                         Subscribe Now
                 </button>
+<!--
             
                 <button class="button w-100 solid snipcart-add-plan "
                     data-plan-id="Ten-X-Office-Subscription"
@@ -402,6 +414,7 @@
                     data-plan-shippable="true">
                         Ten-X
                 </button>
+-->
               <button class="button w-100 solid snipcart-add-plan"
                     data-plan-id="Survey-Monkey-Office-Subscription"
                     data-plan-quantity="6"
@@ -541,6 +554,9 @@
 				value: item['price'],
 				item: item['id']
 			});
+            
+            var _learnq = _learnq || [];
+            _learnq.push(['track', 'Added Product', item]);
 		});
 		Snipcart.subscribe('order.completed', function(data) {
 			fbq('track', 'Purchase', {
@@ -560,7 +576,36 @@
 				"$email": address['email'],
 				"$name": address['name']
 			});
-		});
+            var nameList=address['name'].split(' ');
+
+        
+            var _learnq = _learnq || [];
+            _learnq.push(['identify', {
+                '$email' : address['email'],
+                '$first_name' : nameList.shift(),
+                '$last_name' : nameList.join(' '),
+                'Phone' : address['phone']
+
+            }]);
+
+            if(address['shippingSameAsBilling']){
+                _learnq.push(['identify', {
+                    'State' : address['province'],
+                    'City' : address['city'],
+                    '$last_name' : nameList.join(' ')
+                }]);
+
+            }
+		}); Snipcart.subscribe('shippingaddress.changed', function(address) {
+          console.log(address);
+
+          var _learnq = _learnq || [];
+          _learnq.push(['identify', {
+                'State' : address['province'],
+                'City' : address['city'],
+                '$last_name' : nameList.join(' ')
+            }]);
+        });
 		$('#review-form').submit(function(event) {
 			fbq('track', 'LeftReview');
 			mixpanel.people.set({
