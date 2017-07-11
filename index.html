@@ -1042,8 +1042,7 @@
         if(address['shippingSameAsBilling']){
             _learnq.push(['identify', {
                 'State' : address['province'],
-                'City' : address['city'],
-                '$last_name' : nameList.join(' ')
+                'City' : address['city']
             }]);
             
         }
@@ -1053,8 +1052,7 @@
       var _learnq = _learnq || [];
       _learnq.push(['identify', {
             'State' : address['province'],
-            'City' : address['city'],
-            '$last_name' : nameList.join(' ')
+            'City' : address['city']
         }]);
     });
     $('#review-form').submit(function(event) {
