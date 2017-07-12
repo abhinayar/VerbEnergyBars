@@ -493,8 +493,7 @@
 		<div class="order-bar-image desktop-6 mobile-12">
 			<img class="bar-rendering desktop-hidden" src="public/img/verb_bar_rendering_3_sm@2x.png" alt="Verb Energy Original Oats and Cocoa Caffeinated Energy Bar" />
 			<img class="bar-rendering mobile-hidden" src="public/img/verb_bar_rendering_3.png" alt="Verb Energy Original Oats and Cocoa Caffeinated Energy Bar" />
-		</div>
-		<div class="order-items desktop-6 mobile-12">
+		</div><div class="order-items desktop-6 mobile-12">
 			<div class="order-type">
 				<!--
 			<a href="#" class="single-small order-type-button">
@@ -1048,17 +1047,18 @@
         }
         
         var cart = Snipcart.api.cart.get();
-            console.log(cart);
-            
-            _learnq.push(['track', 'Started Checkout', {
-              "$value" : cart['total'],
-              "ItemsValue" : cart['itemsTotal'],
-              "PlansValue" : cart['plansTotal'],
-              "Items" : cart['items'],
-              "Plans" : cart['plans']
-            }]);
+        console.log(cart);
+
+        _learnq.push(['track', 'Started Checkout', {
+          "$value" : cart['total'],
+          "ItemsValue" : cart['itemsTotal'],
+          "PlansValue" : cart['plansTotal'],
+          "Items" : cart['items'],
+          "Plans" : cart['plans']
+        }]);
         
-    }); Snipcart.subscribe('shippingaddress.changed', function(address) {
+    }); 
+      Snipcart.subscribe('shippingaddress.changed', function(address) {
       console.log(address);
           
       var _learnq = _learnq || [];
@@ -1084,4 +1084,3 @@
       </script>
 </body>
 </html>
-accent-color
