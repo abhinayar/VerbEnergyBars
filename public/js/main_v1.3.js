@@ -604,7 +604,7 @@ $(document).ready(function(){
         const size = parseInt($("#barquant").val());
         $("#officeBarQuantity").css("display","block");
         $('html,body').animate({
-        scrollTop: $("#officeBarQuantity").offset().top},
+        scrollTop: $("#officeform").offset().top},
         'slow');
         
         fillInOffice(size);
