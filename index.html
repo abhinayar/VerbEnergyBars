@@ -1002,8 +1002,6 @@
         value: item['price'],
         item: item['id']
       });
-        
-        var _learnq = _learnq || [];
         _learnq.push(['track', 'Added Product', item]);
     });
     Snipcart.subscribe('order.completed', function(data) {
@@ -1026,8 +1024,6 @@
       });
         var nameList=address['name'].split(' ');
 
-        
-        var _learnq = _learnq || [];
         _learnq.push(['identify', {
             '$email' : address['email'],
             '$first_name' : nameList.shift(),
@@ -1059,7 +1055,6 @@
       Snipcart.subscribe('shippingaddress.changed', function(address) {
       console.log(address);
           
-      var _learnq = _learnq || [];
       _learnq.push(['identify', {
             'State' : address['province'],
             'City' : address['city']
