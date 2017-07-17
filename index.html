@@ -518,12 +518,17 @@
 
 
 
+<!--
 				<div class="single-sub-price trial-price-container price-item">
 					<p class="sub-price">$1.00</p>
 					<p><span class="first-month">first month</span></p>
-				</div><div class="single-sub-price monthly-price-container price-item">
+				</div>
+-->
+<!--                <div class="single-sub-price monthly-price-container price-item">-->
+                <div class="single-sub-price trial-price-container price-item">
 					<p class="sub-price"><span id="sub-price">$1.80</span></p>
-				<p><span class="after-that"><u><span id="subpercent">25%</span> off</u> after</span></p>
+                    <p><span class="after-that"><u><span id="subpercent">25%</span> off</u></span></p>
+<!--                    after</span></p>-->
 				</div>
 			</div>
 			<div class="subscription-select active-select">
@@ -568,10 +573,11 @@
             </button>
 			</div>
 		<div class="order-button">
-			<button class="button w-100 solid snipcart-add-plan withtrial single-sub hidden"
+<!--
+            <button class="button w-100 solid snipcart-add-plan withtrial single-sub hidden"
                     id="10subsub"
                     data-plan-id="Monthly-Sub-10"
-                    data-plan-trial-period="30"
+                    data-plan-trial-period="0"
                     data-plan-quantity="1" 
                     data-item-quantity-step="1" 
                     data-plan-stackable="false" 
@@ -584,15 +590,29 @@
                     data-plan-shippable="true">
                 Subscribe Now
             </button>
+-->
+			<button class="button w-100 solid snipcart-add-plan withtrialFALSE single-sub hidden"
+                    id="10subsub"
+                    data-plan-id="Monthly-Sub-10"
+                    data-plan-quantity="1" 
+                    data-item-quantity-step="1" 
+                    data-plan-stackable="false" 
+                    data-plan-name="10 Bar Verb Subscription (Boxes of 10)" 
+                    data-plan-interval="Month" 
+                    data-plan-amount="20.00" 
+                    data-plan-url="/" 
+                    data-plan-image="public/img/bar_order_mockup.png" 
+                    data-target="sub" 
+                    data-plan-shippable="true">
+                Subscribe Now
+            </button>
             
-            <button class="button w-100 solid snipcart-add-plan withtrial double-sub shown"
+            <button class="button w-100 solid snipcart-add-plan withtrialFALSE double-sub shown"
                     id="20subsub"
                     data-plan-id="Monthly-Sub-20"
-                    data-plan-trial-period="30"
-                    data-quantity="5" 
                     data-plan-quantity="2" 
                     data-plan-stackable="false" 
-                    data-plan-name="Plan After 30 Days - 20 Bar Verb Subscription (Boxes of 10)" 
+                    data-plan-name="20 Bar Verb Subscription (Boxes of 10)" 
                     data-plan-amount="18.00" 
                     data-plan-interval="Month" 
                     data-plan-url="/" 
@@ -602,12 +622,11 @@
 									Subscribe Now
 							</button>
 			
-            <button class="button w-100 solid snipcart-add-plan withtrial triple-sub hidden"
-                    data-plan-trial-period="30"
+            <button class="button w-100 solid snipcart-add-plan withtrialFALSE triple-sub hidden"
                     data-plan-id="Monthly-Sub-30plus" 
                     data-plan-quantity="3" 
                     data-plan-stackable="false" 
-                    data-plan-name="Plan After 30 Days - 30+ Bar Verb Subscription (Boxes of 10)" 
+                    data-plan-name="30+ Bar Verb Subscription (Boxes of 10)" 
                     data-plan-interval="Month" 
                     data-plan-amount="16.90" 
                     data-plan-url="/" 
@@ -616,6 +635,7 @@
 									Subscribe Now
 							</button>
             
+<!--
             <button class="snipcart-add-item hidden" 
                     id="subitem" 
                     data-item-id="Subscription-First-Month" 
@@ -629,6 +649,7 @@
                     data-item-image="public/img/bar_order_mockup.png"
                     data-item-max-quantity="6">
             </button>
+-->
 
 			<button class="button w-100 solid snipcart-add-item single-order hidden" 
                     data-item-id="Single-Order" 

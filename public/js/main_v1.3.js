@@ -267,13 +267,13 @@ $(document).ready(function(){
                 
                 } else {
                     //inc. up
-                    if(curQuant<60){                
+//                    if(curQuant<60){                
                         curQuant+=10;
                         $(".sub-plan-button .quantity-increment.down").removeClass("disabled");
-                        if(curQuant==60){
-                            $(".sub-plan-button .quantity-increment.up").addClass("disabled")
-                        }
-                    }
+//                        if(curQuant==60){
+//                            $(".sub-plan-button .quantity-increment.up").addClass("disabled")
+//                        }
+//                    }
 
                 }
                 var htmlString = htmlString='<span class="sub-plus">+</span>'+String(curQuant)+'<span class="sub-plus">+</span>';
