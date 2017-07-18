@@ -228,7 +228,7 @@
 
 <body>
     <script>
-    var julyPromo=0;
+        var julyPromo = 1;
     </script>
 	<nav>
 		<div class="message-bar">
@@ -283,6 +283,10 @@
     <div class="content container margin-top-neg-five">
       <div class="mobile-12 desktop-l">
         <h2>Get a Quote</h2>
+          <div class="office-promo">
+            <h3>July Promotion</h3>
+            <p>Subscribe by the end of the month for just $1.40 per bar</p>
+        </div>
       </div><div class="mobile-12 desktop-r">
         <div class="officeOrdering">
           <div>
@@ -331,49 +335,25 @@
       </tr>
     </table>
       <div>
-          <!--MONTHLY SUBS-->
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-1" data-plan-id="Office-Sub-10" data-plan-quantity="1" data-item-quantity-step="1" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Month" data-plan-amount="20.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
-
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-2" data-plan-id="Office-Sub-20" data-plan-quantity="2" data-plan-min-quantity="2" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-amount="18.00" data-plan-interval="Month" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
-
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-3" data-plan-id="Office-Sub-30-60" data-plan-quantity="3" data-plan-min-quantity="3" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Month" data-plan-amount="16.90" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-4" data-plan-id="Office-Sub-60-200" data-plan-quantity="1" data-plan-min-quantity="7" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Month" data-plan-amount="16.50" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-5" data-plan-id="Office-Sub-200plus" data-plan-quantity="1" data-plan-min-quantity="20" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Month" data-plan-amount="15.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
+        <!--MONTHLY SUB-->
+        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-july-promo-month" data-plan-id="Office-Sub-July-Promo" data-plan-quantity="1" data-plan-stackable="false" data-plan-name="Monthly Office Verb Subscription (Boxes of 10)" data-plan-interval="Month" data-plan-amount="14.00" data-plan-url="https://www.verbenergybar.com/VerbForOffice/julypromotion" data-plan-shippable="true">
+            Subscribe Now
+          </button>
+          
+       
 
         <!--BI-WEEKLY SUBS-->
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-6" data-plan-id="Office-Sub-10-BiWeekly" data-plan-quantity="1" data-item-quantity-step="1" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Week" data-plan-intervalcount="2" data-plan-amount="18.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
-
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-7" data-plan-id="Office-Sub-20-30-BiWeekly" data-plan-quantity="1" data-plan-min-quantity="2" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Week" data-plan-intervalcount="2" data-plan-amount="16.90" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
-
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-8" data-plan-id="Office-Sub-30-100-BiWeekly" data-plan-quantity="1" data-plan-min-quantity="3" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Week" data-plan-intervalcount="2" data-plan-amount="16.50" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
-        <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-9" data-plan-id="Office-Sub-100plus-BiWeekly" data-plan-quantity="1" data-plan-min-quantity="10" data-plan-stackable="false" data-plan-name="Office Verb Subscription (Boxes of 10)" data-plan-interval="Week" data-plan-intervalcount="2" data-plan-amount="15.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
-                              Subscribe Now
-                      </button>
-
+          <button class="button solid snipcart-add-plan corpsub hidden" id="corp-plan-july-promo-biweekly" data-plan-id="Office-Sub-July-Promo-BiWeekly" data-plan-quantity="1" data-plan-stackable="false" data-plan-name="Biweekly Office Verb Subscription (Boxes of 10)" data-plan-interval="Week" data-plan-intervalcount="2" data-plan-amount="14.00" data-plan-url="https://www.verbenergybar.com/VerbForOffice/julypromotion" data-plan-shippable="true">
+            Subscribe Now
+          </button>
 
 <!--
-        <button class="button solid snipcart-add-plan " data-plan-id="Ten-X-Office-Subscription" data-plan-quantity="6" data-plan-min-quantity="6" data-plan-stackable="false" data-plan-name="Ten-X Office Verb Subscription (Boxes of 10)" data-plan-interval="Month" data-plan-amount="15.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
+        <button class="button solid snipcart-add-plan " data-plan-id="Ten-X-Office-Subscription" data-plan-quantity="6" data-plan-min-quantity="6" data-plan-stackable="false" data-plan-name="Ten-X Office Verb Subscription (Boxes of 10)" data-plan-interval="Month" data-plan-amount="15.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="../public/img/bar_order_mockup.png" data-plan-shippable="true">
                               Ten-X
                       </button>
 -->
 <!--
-        <button class="button solid snipcart-add-plan" data-plan-id="Survey-Monkey-Office-Subscription" data-plan-quantity="6" data-plan-min-quantity="6" data-plan-stackable="false" data-plan-name="Survey Monkey Office Verb Subscription (Boxes of 10)" data-plan-interval="Week" data-plan-intervalcount="2" data-plan-amount="15.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="/public/img/bar_order_mockup.png" data-plan-shippable="true">
+        <button class="button solid snipcart-add-plan" data-plan-id="Survey-Monkey-Office-Subscription" data-plan-quantity="6" data-plan-min-quantity="6" data-plan-stackable="false" data-plan-name="Survey Monkey Office Verb Subscription (Boxes of 10)" data-plan-interval="Week" data-plan-intervalcount="2" data-plan-amount="15.00" data-plan-url="https://www.verbenergybar.com/VerbForOffices" data-plan-image="../public/img/bar_order_mockup.png" data-plan-shippable="true">
                               Survey Monkey
                       </button>
 -->
@@ -462,7 +442,7 @@
 	<!-- CUSTOM JS -->
 	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
 	<script src="/public/js/main_v1.3.js"></script>
-	<!--  <script src="public/js/firebasereviews.js"></script>-->
+	<!--  <script src="/public/js/firebasereviews.js"></script>-->
 	<script>
 		Snipcart.subscribe('item.added', function(item) {
 			fbq('track', 'AddToCart', {

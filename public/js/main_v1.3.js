@@ -2,11 +2,26 @@
 
 $(document).ready(function(){
     
+    //
+    // Email List Modal
+    //
+//    setTimeout(function(){
+//        $("#emailList").css("display","block");
+//        $("#emailList").addClass("shown");
+//        $("body").addClass("modal-open");
+//    }, 5000);
+    
+    
     $(document).keyup(function(e) {
          if (e.keyCode == 27) { // escape key maps to keycode `27`
-            $(".modal").css("display","none");
+            closeModal();
         }
     });
+    function closeModal(){
+        $(".modal").css("display","none");
+        $("body").removeClass("modal-open");
+        $(".modal").removeClass("shown");
+    }
     
     
     
@@ -546,21 +561,21 @@ $(document).ready(function(){
     });
     
     $("#reviewBtn").on("click",function(){
-       $("#reviewModal").css("display","block"); 
-       $("#reviewModal").addClass("shown");
+        $("#reviewModal").css("display","block");
+        $("#reviewModal").addClass("shown");
+        $("body").addClass("modal-open");
     });
     $(".close").on("click",function(){
-        $(".modal").css("display","none");
+        closeModal();
+//        $(".modal").css("display","none");
+//        $("body").removeClass("modal-open");
     })
 
     $(document).mouseup(function(e) {
         var container = $(".modal.shown .modal-content");
-        
-
         // if the target of the click isn't the container nor a descendant of the container
-        if (!container.is(e.target) && container.has(e.target).length === 0) 
-        {            $(".modal.shown").css("display","none");
-         $(".modal.shown").removeClass("shown");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {    
+            closeModal();
         }
     });
     
@@ -646,7 +661,21 @@ $(document).ready(function(){
         } else{
             suggestedEmployees='200+';
         }
-        if(sub){
+        
+        if(julyPromo && sub){
+            pricePerBar=1.40;
+            $(".corpsub").removeClass("shown").addClass("hidden");
+            $(".corpsingle").removeClass("shown").addClass("hidden");
+            if(freq==1){
+                console.log("here");
+                $("#corp-plan-july-promo-month").removeClass("hidden").addClass("shown");
+                $("#corp-plan-july-promo-month").data("plan-quantity",String(bars/10));
+            } else{
+                $("#corp-plan-july-promo-biweekly").removeClass("hidden").addClass("shown");
+                $("#corp-plan-july-promo-biweekly").data("plan-quantity",String(bars/10));
+            }
+        }
+        else if(sub){
             var plan=0;
             if(totalBars==10){
                 plan=1;
@@ -664,10 +693,7 @@ $(document).ready(function(){
             if(localFreq==2){
                 plan+=4;
             }
-            console.log($("#corp-plan-"+String(plan)).data());
             $("#corp-plan-"+String(plan)).data("plan-quantity",String(bars/10));
-            console.log(bars/10);
-            console.log($("#corp-plan-"+String(plan)).data());
             $(".corpsub").removeClass("shown").addClass("hidden");
             $(".corpsingle").removeClass("shown").addClass("hidden");
             $("#corp-plan-"+String(plan)).removeClass("hidden").addClass("shown");
@@ -695,6 +721,7 @@ $(document).ready(function(){
                 $("#single-plan-3").data("item-quantity",String(bars/10));
             }
         }
+        
         totalPrice=pricePerBar*bars;
         $("#fillEmployees").text(suggestedEmployees);
         $("#fillPPB").text("$"+String(pricePerBar.toFixed(2)));
