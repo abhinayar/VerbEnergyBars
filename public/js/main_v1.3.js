@@ -9,7 +9,7 @@ $(document).ready(function(){
 //        $("#emailList").css("display","block");
 //        $("#emailList").addClass("shown");
 //        $("body").addClass("modal-open");
-//    }, 5000);
+//    }, 000);
     
     
     $(document).keyup(function(e) {
@@ -22,6 +22,12 @@ $(document).ready(function(){
         $("body").removeClass("modal-open");
         $(".modal").removeClass("shown");
     }
+    
+//    $("#emailListForm").on("submit",function(event){
+//        event.preventDefault(); 
+//        alert("suh");
+//        
+//    });
     
     
     
