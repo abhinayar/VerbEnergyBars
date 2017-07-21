@@ -168,11 +168,13 @@
       })();
     </script>
 
+<!--
 	<script>
 		window.intercomSettings = {
 			app_id: "l1ihfd5f"
 		};
 	</script>
+-->
 	<script>
 		(function() {
 			var w = window;
@@ -251,7 +253,7 @@
 		<div id="fixedDiv" style="position:fixed;width:40%;">
             <div class="container">
                 <div class="mobile-12 desktop-l">
-                    <h2>Get your good energy here</h2>
+                    <h2>connect with verb</h2>
                 </div>
             </div>
             <div id="email-form-container" class="container">
@@ -524,18 +526,19 @@
                 });
             };
 
-            $('#fixedDiv').followTo(1000);
+            $('#fixedDiv').followTo(1100);
             
             $("#email-form").on("submit",function(){
                 var email = $("#theiremail").val();
                 setTimeout(function(){
                     $("#email-form-container").removeClass('submitted');
                     $("#theiremail").val("");
+                    window.location.reload(true);
                 },4500);
                 _learnq.push(['identify', {
                     '$email' : email
                 }]);
-                _learnq.track(['track', 'SF Marathon']);
+                _learnq.push(['track', 'SF Marathon']);
 
             });
         });
