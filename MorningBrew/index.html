@@ -279,6 +279,7 @@
                 <input type="text" name="zip" placeholder="Zip Code" required>
                 <button class="button solid">Send me a free Verb Bar</button>    
             </form>
+            <h1 id="replacement-text" style="display:none">Thanks! Your bar is on its way.</h1>
 			</div>
 		</div>
 	</section>
@@ -395,6 +396,9 @@
                 'Zip' : $("#freebar input[name=zip]").val()
             }]);
             _learnq.push(['track', 'Morning Brew']);
+            
+            $("#freebar").css("display", "none");
+            $("#replacement-text").css("display","block");
             
         })
     </script>
