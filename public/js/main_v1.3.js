@@ -653,7 +653,7 @@ $(document).ready(function(){
             pricePerBar=1.80;
         } else if(totalBars <= 60){
             suggestedEmployees='1-10';
-            pricePerBar=1.69;
+            pricePerBar=1.70;
         } else if(totalBars < 200){
             suggestedEmployees='10-25';
         } else if(totalBars < 300){
@@ -714,7 +714,7 @@ $(document).ready(function(){
             $(".corpsub").removeClass("shown").addClass("hidden");
             $(".corpsingle").removeClass("shown").addClass("hidden");
             if(totalBars<100){
-                pricePerBar=2.40;
+                pricePerBar=2.00;
                 $("#single-plan-1").removeClass("hidden").addClass("shown");
                 $("#single-plan-1").data("item-quantity",String(bars/10));
             } else if(totalBars < 200){

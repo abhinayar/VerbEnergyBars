@@ -269,9 +269,16 @@
                     <p>We started Verb as students in college. We wanted all-day focus we could take anywhere and feel good about consuming.</p><p>They've got caffeine from green tea for jitter-free energy, 8 simple gluten-free and vegan ingredients for every-day nutrition, and an amazing oats &amp; cocoa flavor you'll actually want to eat.</p><p>They also cost less than coffee, energy drinks, and energy shots while pulling double duty as an energy bar. Try your first bar on us.
                     </p>
 				</div>
-            <button class="button solid snipcart-add-item" id="free-bar" data-item-id="Free-Bar" data-item-name="Free Verb Bar" data-item-price="0.00" data-item-max-quantity="1" data-item-stackable="false" data-item-weight="500" data-item-image="/public/img/verb_bar_rendering_3_sm.png" data-item-url="https://www.verbenergybar.com/MorningBrew" data-item-description="Best energy on the planet. Free sample." data-item-quantity="1" data-target="single">
-                        Free Bar
-                    </button>
+            
+            <form id="freebar">
+                <input type="email" placeholder="Email" name="email" required style="width:50%;">
+                <input type="text" placeholder="Street Address" name="add1" autocomplete="address-line1" required>
+                <input type="text" name="add2" placeholder="Street Address 2" val="">
+                <input style="width:49.5%" name="city" type="text" placeholder="City" required>
+                <input style="width:49.5%;" name="state" type="text" placeholder="State" required>
+                <input type="text" name="zip" placeholder="Zip Code" required>
+                <button class="button solid">Send me a free Verb Bar</button>    
+            </form>
 			</div>
 		</div>
 	</section>
@@ -376,7 +383,22 @@
 				"$email": strip_html_tags(($("#js-email").val() == '') ? 'none@email.com' : $("#js-email").val())
 			});
 		});
-	</script>
+        $("#freebar").submit(function(event){
+            event.preventDefault();
+            alert( $("#freebar input[name=email]").val() );
+            
+            _learnq.push(['identify', {
+                '$email' : $("#freebar input[name=email]").val(),
+                'Address1' : $("#freebar input[name=add1]").val(),
+                'Address2' : $("#freebar input[name=add2]").val(),
+                'City' : $("#freebar input[name=city]").val(),
+                'State' : $("#freebar input[name=state]").val(),
+                'Zip' : $("#freebar input[name=zip]").val()
+            }]);
+            
+        })
+    </script>
+
 	<script id="cart-content-text" type="text/template">
 		<div class="custom-snipcart-footer-text">
 			<h2>For Verb Subscribers</h2>
