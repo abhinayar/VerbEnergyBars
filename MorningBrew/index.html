@@ -385,7 +385,6 @@
 		});
         $("#freebar").submit(function(event){
             event.preventDefault();
-            alert( $("#freebar input[name=email]").val() );
             
             _learnq.push(['identify', {
                 '$email' : $("#freebar input[name=email]").val(),
@@ -395,6 +394,7 @@
                 'State' : $("#freebar input[name=state]").val(),
                 'Zip' : $("#freebar input[name=zip]").val()
             }]);
+            _learnq.push(['track', 'Morning Brew']);
             
         })
     </script>
