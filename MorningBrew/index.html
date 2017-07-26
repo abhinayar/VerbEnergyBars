@@ -271,7 +271,9 @@
 				</div>
             
             <form id="freebar">
-                <input type="email" placeholder="Email" name="email" required style="width:50%;">
+                <input style="width:49.5%" name="name" type="text" placeholder="Name" required>
+                <input style="width:49.5%;" name="email" type="email" placeholder="Email" required>
+<!--                <input type="text" placeholder="Name" name="name" required style="width:49.5%;"><input type="email" placeholder="Email" name="email" required style="width:49.5%;">-->
                 <input type="text" placeholder="Street Address" name="add1" autocomplete="address-line1" required>
                 <input type="text" name="add2" placeholder="Street Address 2" val="">
                 <input style="width:49.5%" name="city" type="text" placeholder="City" required>
@@ -387,7 +389,11 @@
         $("#freebar").submit(function(event){
             event.preventDefault();
             
+            var nameList=$("#freebar input[name=name]").val()
+            
             _learnq.push(['identify', {
+                '$first_name' : nameList.shift(),
+                '$last_name' : nameList.join(' '),
                 '$email' : $("#freebar input[name=email]").val(),
                 'Address1' : $("#freebar input[name=add1]").val(),
                 'Address2' : $("#freebar input[name=add2]").val(),
