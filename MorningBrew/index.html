@@ -389,7 +389,7 @@
         $("#freebar").submit(function(event){
             event.preventDefault();
             
-            var nameList=$("#freebar input[name=name]").val()
+            var nameList=$("#freebar input[name=name]").val().split(' ');
             
             _learnq.push(['identify', {
                 '$first_name' : nameList.shift(),
