@@ -485,8 +485,9 @@ $(document).ready(function(){
     });
     $('#review-form').submit(function(event) {
        event.preventDefault();
+        
 	    
-	var emailV = "email";
+	    var emailV = "email";
         var titleV = "title";
         var nameV = "name";
         var commentsV = "comments";
@@ -498,7 +499,11 @@ $(document).ready(function(){
         commentsV = strip_html_tags($("#comments").val());
         ratingV = parseInt($("input[name='rating']:checked").val());
         
-
+        _learnq.push(['identify', {
+            '$email' : emailV
+        }]);
+        _learnq.push(['track', 'Left Review']);
+        
 
         firebase.auth().signInAnonymously().then(function(){
 
