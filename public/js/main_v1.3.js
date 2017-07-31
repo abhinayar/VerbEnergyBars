@@ -674,7 +674,7 @@ $(document).ready(function(){
         }
         
         if(julyPromo && sub){
-            pricePerBar=1.40;
+            pricePerBar=1.50;
             $(".corpsub").removeClass("shown").addClass("hidden");
             $(".corpsingle").removeClass("shown").addClass("hidden");
             if(freq==1){
