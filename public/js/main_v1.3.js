@@ -652,13 +652,13 @@ $(document).ready(function(){
         
         if(totalBars==10){
             suggestedEmployees='1-10';
-            pricePerBar=2.00;
+            pricePerBar=2.20;
         } else if(totalBars==20){
             suggestedEmployees='1-10';
-            pricePerBar=1.80;
+            pricePerBar=2.00;
         } else if(totalBars <= 60){
             suggestedEmployees='1-10';
-            pricePerBar=1.70;
+            pricePerBar=1.80;
         } else if(totalBars < 200){
             suggestedEmployees='10-25';
         } else if(totalBars < 300){
@@ -719,15 +719,15 @@ $(document).ready(function(){
             $(".corpsub").removeClass("shown").addClass("hidden");
             $(".corpsingle").removeClass("shown").addClass("hidden");
             if(totalBars<100){
-                pricePerBar=2.00;
+                pricePerBar=2.50;
                 $("#single-plan-1").removeClass("hidden").addClass("shown");
                 $("#single-plan-1").data("item-quantity",String(bars/10));
             } else if(totalBars < 200){
-                pricePerBar=2.00;
+                pricePerBar=2.20;
                 $("#single-plan-2").removeClass("hidden").addClass("shown");
                 $("#single-plan-2").data("item-quantity",String(bars/10));
             } else{
-                pricePerBar=1.80;
+                pricePerBar=2.00;
                 $("#single-plan-3").removeClass("hidden").addClass("shown");
                 $("#single-plan-3").data("item-quantity",String(bars/10));
             }
