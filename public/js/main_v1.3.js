@@ -2,6 +2,8 @@
 
 $(document).ready(function(){
     
+    
+    
     //
     // Email List Modal
     //
@@ -213,16 +215,61 @@ $(document).ready(function(){
                 $("body").addClass("fixed");
             }
             
-            
-            Snipcart.unsubscribe('cart.opened');
             var html = $("#cart-content-text").html();
-            $(html).insertBefore($("#snipcart-footer"));
+            
+            if(!$("#snipcart-main-content").find(".custom-snipcart-footer-text")['length']){
+                $(html).insertBefore($("#snipcart-footer"));
+            }
+            $(".snip-product__name").each(function(idx){
+
+                if($(this).text().includes("First Month Discounted")){
+                    $(this).append("<p style='font-size:0.7em;color:gray;'>$1 / bar First Month</p>");
+                    if($(this).text().includes("10 Bar")){
+                        $(this).append("<p style='font-size:0.7em;color:gray;'>$2.20 / bar thereafter</p>");
+                    }
+                    if($(this).text().includes("20 Bar")){
+                        $(this).append("<p style='font-size:0.7em;color:gray;'>$2.00 / bar thereafter</p>");
+                    }
+                    if($(this).text().includes("30+ Bar")){
+                        $(this).append("<p style='font-size:0.7em;color:gray;'>$1.80 / bar thereafter</p>");
+                    }
+                }
+                
+                
+            });
     
         });
         Snipcart.subscribe('cart.closed', function() {
             $("body").removeClass("fixed");
         });
-        Snipcart.subscribe('page.change', function (page) {
+        var planRates = {
+            10 : 22.00,
+            20 : 20.00,
+            30 : 18.00
+        }
+
+        Snipcart.subscribe('page.changed', function (page) {
+            if(page=='order-confirm'){
+                            
+                $("#snipcart-upcoming-payments-list .snip-table .snip-table__body tr").each(function(idx){
+
+                    var children = $(this).children();
+                   if($(children[0]).text().includes("First Month Discounted")){
+                       var planType = $(children[0]).text().trim().substr(0,2);
+                       var planQuantity = $($("#snipcart-plans-list").children()[idx]).find(".snip-quantity-trigger__text").text();
+                       
+                       var discountPlan = $($("#snipcart-plans-list").children()[idx]).children();
+                       
+                       var newPer = $(discountPlan[2]).text().replace(" / month","");
+                       var newTotal = $(discountPlan[3]).text().replace(" / month","");
+                       $(discountPlan[2]).text(newPer);
+                       $(discountPlan[3]).text(newTotal);
+                       
+                       $(children[2]).text("$"+planRates[planType]*planQuantity+".00");
+                        
+                   }
+                });
+            }
             setTimeout(customPageChange, 150);
         });
         
@@ -288,13 +335,13 @@ $(document).ready(function(){
                 
                 } else {
                     //inc. up
-//                    if(curQuant<60){                
+                    if(curQuant<60){                
                         curQuant+=10;
                         $(".sub-plan-button .quantity-increment.down").removeClass("disabled");
-//                        if(curQuant==60){
-//                            $(".sub-plan-button .quantity-increment.up").addClass("disabled")
-//                        }
-//                    }
+                        if(curQuant==60){
+                            $(".sub-plan-button .quantity-increment.up").addClass("disabled")
+                        }
+                    }
 
                 }
                 var htmlString = htmlString='<span class="sub-plus">+</span>'+String(curQuant)+'<span class="sub-plus">+</span>';
@@ -306,49 +353,49 @@ $(document).ready(function(){
         });
         
         
-        $(".snipcart-add-plan.withtrial").on("click", function(){
-            $("#subitem").data("item-quantity",$(this).data("plan-quantity"));
-//            $("#subitem").click(); 
-            
-            
-            
-            Snipcart.api.items.add({
-                "id": "Subscription-First-Month",
-                "name": "Subscription First Month",
-                "description": "$10 per box of 10 bars",
-                "url": "/",
-                "price": "10.00",
-                "quantity": $(this).data("plan-quantity"),
-                "maxQuantity":6,
-                "shippable":"true",
-                "image":"public/img/bar_order_mockup.png",
-                "stackable": false
-            }).catch(function(error){
-		    Raven.captureException(error);
-                
-                 var planID = (error['item']['attributes']['quantity'] < 3) ? "Monthly-Sub-"+String(error['item']['attributes']['quantity'])+"0" : "Monthly-Sub-30plus";
-                                
-                setTimeout(function(){
-                
-                    var plan = Snipcart.collections.plans.findWhere({'id': planID,'quantity':error['item']['attributes']['quantity']})
-                    
-                    if (plan){
-			    plan.destroy();
-			    Snipcart.api.modal.show();
-			    Snipcart.api.modal.close();
-			    Snipcart.api.modal.show();
-		    }
-
-                    
-                }, 3000);
-                
-
-
-                
-            });
-            Snipcart.api.modal.show();
-
-        });
+//        $(".snipcart-add-plan.withtrial").on("click", function(){
+//            $("#subitem").data("item-quantity",$(this).data("plan-quantity"));
+////            $("#subitem").click(); 
+//            
+//            
+//            
+//            Snipcart.api.items.add({
+//                "id": "Subscription-First-Month",
+//                "name": "Subscription First Month",
+//                "description": "$10 per box of 10 bars",
+//                "url": "/",
+//                "price": "10.00",
+//                "quantity": $(this).data("plan-quantity"),
+//                "maxQuantity":6,
+//                "shippable":"true",
+//                "image":"public/img/bar_order_mockup.png",
+//                "stackable": false
+//            }).catch(function(error){
+//		    Raven.captureException(error);
+//                
+//                 var planID = (error['item']['attributes']['quantity'] < 3) ? "Monthly-Sub-"+String(error['item']['attributes']['quantity'])+"0" : "Monthly-Sub-30plus";
+//                                
+//                setTimeout(function(){
+//                
+//                    var plan = Snipcart.collections.plans.findWhere({'id': planID,'quantity':error['item']['attributes']['quantity']})
+//                    
+//                    if (plan){
+//			    plan.destroy();
+//			    Snipcart.api.modal.show();
+//			    Snipcart.api.modal.close();
+//			    Snipcart.api.modal.show();
+//		    }
+//
+//                    
+//                }, 3000);
+//                
+//
+//
+//                
+//            });
+//            Snipcart.api.modal.show();
+//
+//        });
         
         
 
@@ -362,15 +409,15 @@ $(document).ready(function(){
                 $(".order-button button").addClass("hidden").removeClass("shown");
                 $($(this).data("subid")).removeClass("hidden").addClass("shown");
                 
-                $("#sub-price").html($(this).data("sub-price"));
-                $("#subpercent").html($(this).data("percent-off"));
+                $("#monthly-price").html($(this).data("sub-price"));
+                $("#rest-month-off").html($(this).data("percent-off"));
                 
                 $(".order-button button.shown").data("plan-quantity",$(this).data("box-quantity"));
             }
             
         });
         
-        $(".order-type .order-type-button").on('click', function(event){
+        $(".order-type .order-type-button.sub-button").on('click', function(event){
             event.preventDefault ? event.preventDefault() : (event.returnValue = false);
 
             var curType;
@@ -740,6 +787,7 @@ $(document).ready(function(){
         
         
     }
+    
 
 
 });

@@ -1424,13 +1424,14 @@ header .header-images .shadow {
   background: #fff1db;
   padding-bottom: 2em;
 }
-#OrderVerb .order-bar-image {
+.order-bar-image {
   vertical-align: center;
 }
-#OrderVerb .order-bar-image img {
+.order-bar-image img {
   max-width: 100%;
   width: 100%;
 }
+
 .order-items {
   vertical-align: center;
   height: auto;
@@ -1487,7 +1488,7 @@ header .header-images .shadow {
   outline: none !important;
   box-shadow: none !important;
 }
-.order-type-button:hover {
+.order-type-button.sub-button:hover {
   background: #1d1d20;
   color: #fff1db;
 }
@@ -1534,7 +1535,7 @@ header .header-images .shadow {
 .trial-price-container,
 .monthly-price-container {
   width: 50%;
-  height: 5em;
+/*  height:2em;*/
   display: inline-block;
   vertical-align: top;
   margin: 1em auto .5em;
@@ -1555,6 +1556,7 @@ header .header-images .shadow {
   font-size: .4em;
   font-weight: 700;
 }
+
 .sub-price {
   font-size: 2.5em;
   font-weight: 700;
@@ -1562,21 +1564,44 @@ header .header-images .shadow {
   margin: 0;
   line-height: .5;
 }
+.firstmonth {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.thereafter {
+    padding-top: 1em;
+    font-size: 2em;
+    color:black;
+}
+.firstmonth:after {
+  content: '/ bar first month';
+  font-size: .4em;
+  font-weight: 700;
+}
+.thereafter:after {
+  content: '/ bar thereafter';
+  font-size: .4em;
+  font-weight: 700;
+}
+/*
 .sub-price:after {
   content: '/ bar';
   font-size: .4em;
   font-weight: 700;
 }
+*/
 .single-price {
   font-size: 2.5em;
   font-weight: 700;
   color: #369638;
 }
+/*
 .single-price:after {
   content: '/ bar';
   font-size: .4em;
   font-weight: 700;
 }
+*/
 .first-month,
 .after-that {
   font-weight: 700;
@@ -1584,6 +1609,7 @@ header .header-images .shadow {
   margin: 0;
   padding: 0;
   line-height: 1;
+    color:black;
 }
 .subscription-select {
   display: none;
@@ -1696,7 +1722,7 @@ header .header-images .shadow {
 }
 .quantity-select {
   padding-bottom: 2.15em;
-  display: none;
+/*  display: none;*/
   margin: 1em 0;
   text-align: center;
 }
@@ -2472,3 +2498,42 @@ footer li {
   margin-top: 2em;
   color: #369638;
 }
+
+.orderOneTime {
+    margin-top:5em!important;
+}
+
+oneTimeQuantity-increment {
+    visibility: visible;
+    display: block;
+}
+
+.subscription-pricing span {
+
+}
+#first-month-subscription-pricing {
+    color : #369638;
+}
+.sub-priceperbar {
+    font-size: 2em;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0;
+}
+.sub-priceperbar:after {    
+    content: '/ bar';
+    font-size: .4em;
+    font-weight: 700;
+}
+
+.sub-month-header {
+    font-size: 1.5em;
+    margin-bottom:0.5em;
+    margin-top:0.5em;
+    color : black;
+}
+
+.left-align {
+    text-align: left;
+}
+

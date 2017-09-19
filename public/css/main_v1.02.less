@@ -1,11 +1,9 @@
 @import 'snipcartCustomization';
-
 //========================================
 //========================================
 //======================================== New Palette
 //========================================
 //========================================
-
 
 @verb-primary-1: hsl(36, 100%, 93%);
 @verb-primary-2: hsl(38, 100%, 89%);
@@ -1434,7 +1432,7 @@ header {
 .trial-price-container,
 .monthly-price-container, {
 	width: 50%;
-	height: 5em;
+	height: 10em;
 	display: inline-block;
 	vertical-align: top;
 	margin: 1em auto .5em;
@@ -1452,18 +1450,38 @@ header {
 	color: @accent-color;
 }
 
-.price {
-	font-size: 2.5em;
+.test {
+    s
+}
+
+//.price {
+//	font-size: 2.5em;
+//	font-weight: 700;
+//	&:after {
+//		content: '/ bar';
+//		font-size: .4em;
+//		font-weight: 700;
+//	}
+//}
+.firstmonth {
+    font-size: 2.5em;
 	font-weight: 700;
-	&:after {
-		content: '/ bar';
+    &:after {
+		content: '/ bar first month';
+		font-size: .4em;
+		font-weight: 700;
+	}
+}
+.thereafter {
+    &:after {
+		content: '/ bar thereafter';
 		font-size: .4em;
 		font-weight: 700;
 	}
 }
 
 .sub-price {
-	.price;
+//	.price;
 	padding: .5em 0 0;
 	margin: 0;
 	line-height: .5;
