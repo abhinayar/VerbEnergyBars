@@ -607,6 +607,9 @@ $(document).ready(function(){
         
         const verb = $("#theirverb").val();
         const email = $("#theiremail").val();
+        
+        console.log(verb);
+        console.log(email);
 
         $("#email-form-container").addClass('submitted');
         
