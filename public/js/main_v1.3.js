@@ -615,6 +615,11 @@ $(document).ready(function(){
             verb: verb
         });
         
+        _learnq.push(['identify', {
+            '$email' : email,
+            'Verb' : verb
+        }]);
+        
         
     });
     
