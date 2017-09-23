@@ -619,6 +619,7 @@ $(document).ready(function(){
             '$email' : email,
             'Verb' : verb
         }]);
+        _learnq.push(['track', 'Email-form']);
         
         
     });
