@@ -335,10 +335,10 @@ $(document).ready(function(){
                 
                 } else {
                     //inc. up
-                    if(curQuant<60){                
+                    if(curQuant<30){                
                         curQuant+=10;
                         $(".sub-plan-button .quantity-increment.down").removeClass("disabled");
-                        if(curQuant==60){
+                        if(curQuant==30){
                             $(".sub-plan-button .quantity-increment.up").addClass("disabled")
                         }
                     }
@@ -607,9 +607,6 @@ $(document).ready(function(){
         
         const verb = $("#theirverb").val();
         const email = $("#theiremail").val();
-        
-        console.log(verb);
-        console.log(email);
 
         $("#email-form-container").addClass('submitted');
         
