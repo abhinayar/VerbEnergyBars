@@ -4,7 +4,6 @@
 //======================================== New Palette
 //========================================
 //========================================
-
 @verb-primary-1: hsl(36, 100%, 93%);
 @verb-primary-2: hsl(38, 100%, 89%);
 @verb-primary-3: hsl(41, 85%, 79%);
@@ -20,15 +19,12 @@
 @verb-yellow-2: hsl(47, 89%, 52%);
 @verb-green-1: hsl(121, 44%, 49%);
 @verb-green-2: hsl(121, 47%, 40%);
-
 //========================================
 //========================================
 //======================================== Vars
 //========================================
 //========================================
-
 @white: rgb(255, 248, 240);
-
 //@verb-white: rgba(255, 241, 224, 100);
 @verb-white: @verb-primary-2;
 @verb-white-transparent: rgba(255, 241, 224, .8);
@@ -40,39 +36,46 @@
 .verb-oat {
 	color: @verb-oat;
 }
+
 //@verb-yellow: hsl(51, 100%, 55%);
 @verb-yellow: @verb-yellow-1;
 .verb-yellow {
 	color: @verb-yellow;
 }
+
 @verb-yellow-10: lighten(@verb-yellow, 10%);
 //@verb-gold: hsl(44, 79%, 54%);
 @verb-gold: @verb-yellow-2;
 .verb-gold {
 	color: @verb-gold;
 }
+
 @verb-gold-10: lighten(@verb-gold, 10%);
 //@verb-green: hsl(120, 43%, 39%);
 @verb-green: @verb-green-2;
 .verb-green {
 	color: @verb-green;
 }
+
 @verb-green-10: lighten(@verb-green, 10%);
 @verb-blue: hsl(222, 59%, 47%);
 .verb-blue {
 	color: @verb-blue;
 }
+
 @verb-blue-10: lighten(@verb-blue, 10%);
 @verb-red: hsl(9, 59%, 46%);
 .verb-red {
 	color: @verb-red;
 }
+
 @verb-red-10: lighten(@verb-red, 10%);
 //@verb-brown: hsl(28, 41%, 27%);
 @verb-brown: @verb-brown-1;
 .verb-brown {
 	color: @verb-brown;
 }
+
 @verb-brown-10: lighten(@verb-brown, 10%);
 @verb-gray: @verb-gray-1;
 //@verb-gray: hsl(0, 0%, 68%);
@@ -88,11 +91,9 @@
 @background-color: @verb-white;
 @text-color-light: @verb-oat;
 @text-color-white: @verb-white;
-
 @stroke-width: 4px;
 @primary-font: 'Montserrat', sans-serif;
 @secondary-font: 'Montserrat', sans-serif;
-
 .text-color-fill {
 	fill: @text-color;
 }
@@ -102,65 +103,72 @@
 }
 
 .background-gradient {
-	background: -moz-linear-gradient(top, @verb-white 50%, @verb-oat 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, @verb-white 50%, @verb-oat 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, @verb-white 50%, @verb-oat 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@background-color', endColorstr='verb-white-transparent@background-color',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top, @verb-white 50%, @verb-oat 100%);
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(top, @verb-white 50%, @verb-oat 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, @verb-white 50%, @verb-oat 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@background-color', endColorstr='verb-white-transparent@background-color', GradientType=0);
+	/* IE6-9 */
 }
 
 .primary-font {
-  font-family: @primary-font;
+	font-family: @primary-font;
 }
 
 .secondary-font {
-  font-family: @secondary-font;
+	font-family: @secondary-font;
 }
 
 @row-width: 1920px;
-
 @border: @stroke-width solid @text-color;
-
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility
 }
 
-q { quotes: '\201c' '\201d'; }
-q:before { content: open-quote; }
-q:after  { content: close-quote; }
+q {
+	quotes: '\201c' '\201d';
+}
+
+q:before {
+	content: open-quote;
+}
+
+q:after {
+	content: close-quote;
+}
 
 html,
 body {
-  font-family: @primary-font;
-  font-weight: 400;
-  font-size: 16px;
-	
+	font-family: @primary-font;
+	font-weight: 400;
+	font-size: 16px;
 	padding: 0;
 	margin: 0;
-	
-  color: @text-color;
-  background: @text-color;
-  
-  height: 100%;
-  min-width: 25em;
-  min-height: 100%;
-	
-  -webkit-tap-highlight-color: rgba(255,255,255,0);
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
+	color: @text-color;
+	background: @text-color;
+	height: 100%;
+	min-width: 25em;
+	min-height: 100%;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
 }
 
-body > div,
-body > section {
-  background: @background-color;
+body>div,
+body>section {
+	background: @background-color;
 }
-body.modal-open{
-    overflow:hidden;
+
+body.modal-open {
+	overflow: hidden;
 }
 
 table {
@@ -170,9 +178,9 @@ table {
 
 section,
 footer {
-  display: block;
-  height: auto;
-  width: 100%;
+	display: block;
+	height: auto;
+	width: 100%;
 	padding: 2em;
 	margin: 0 !important;
 }
@@ -184,35 +192,44 @@ footer {
 .left {
 	float: left;
 }
+
 .right {
 	float: right;
 }
+
 .text-center {
 	text-align: center;
 }
+
 .text-right {
 	text-align: right;
 }
+
 .relative {
 	position: relative;
 }
+
 .hidden {
 	display: none !important
 }
+
 .clearfix:after,
 .clearfix:before {
 	content: " ";
 	display: table
 }
+
 .clearfix:after {
 	clear: both
 }
+
 .container {
 	width: 100%;
 	max-width: 75em;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .content {
 	margin-bottom: 4em;
 }
@@ -222,6 +239,7 @@ footer {
 		display: none;
 	}
 }
+
 .hide-mobile {
 	display: none;
 	@media (min-width: 48em) {
@@ -234,7 +252,6 @@ footer {
 //======================================== Animation
 //========================================
 //========================================
-
 .fade-in,
 .fade-up,
 .fade-up-left {
@@ -254,19 +271,14 @@ footer {
 
 @drop-in-0: translateY(-7em);
 @drop-in-1: translateY(0);
-
 .drop-in {
 	transform: @drop-in-0;
 	opacity: 0;
 	transition-delay: .5s !important;
-	-webkit-transition: transform .5s cubic-bezier(0.55, 0.055, 0.675, 0.19),
-		opacity .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-	-moz-transition: transform .5s cubic-bezier(0.55, 0.055, 0.675, 0.19),
-		opacity .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-	-o-transition: transform .5s cubic-bezier(0.55, 0.055, 0.675, 0.19),
-		opacity .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-	transition: transform .5s cubic-bezier(0.55, 0.055, 0.675, 0.19),
-		opacity .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	-webkit-transition: transform .5s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	-moz-transition: transform .5s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	-o-transition: transform .5s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	transition: transform .5s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity .5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 	&.in {
 		transform: @drop-in-1;
 		opacity: 1;
@@ -280,6 +292,7 @@ footer {
 		top: 0;
 	}
 }
+
 .fade-up-left {
 	position: relative;
 	top: 50px;
@@ -289,6 +302,7 @@ footer {
 		left: 0;
 	}
 }
+
 .fade-up-right {
 	position: relative;
 	top: 50px;
@@ -304,10 +318,9 @@ footer {
 //======================================== Type
 //========================================
 //========================================
-
 h1 {
-  color: inherit;
-  font-weight: 900;
+	color: inherit;
+	font-weight: 900;
 	text-align: center;
 	font-size: 3em;
 }
@@ -317,11 +330,10 @@ h3,
 h4,
 h5,
 h6 {
-  color: inherit;
-  font-weight: 700;
+	color: inherit;
+	font-weight: 700;
 	margin: 0;
 }
-
 
 h2 {
 	font-size: 2em;
@@ -353,7 +365,9 @@ h4 {
 	font-size: 24px;
 	text-transform: uppercase
 }
-p, .canceltext {
+
+p,
+.canceltext {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -389,11 +403,12 @@ ul {
 }
 
 .reverse {
-  background: @text-color;
-  color: @text-color-light;
-  a, input {
-    color: @text-color-white;
-  }
+	background: @text-color;
+	color: @text-color-light;
+	a,
+	input {
+		color: @text-color-white;
+	}
 }
 
 .tiny {
@@ -410,27 +425,22 @@ ul {
 //======================================== Buttons
 //========================================
 //========================================
-
 .button,
-button, 
-input[type="submit"], 
+button,
+input[type="submit"],
 input[type="button"] {
 	display: inline-block;
-	
- -webkit-appearance: none;
- -moz-appearance: none;
- appearance: none;  
-	
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	border-radius: 0;
 	border: @border;
-	
 	font-family: inherit;
 	font-weight: 700;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 1em;
 	line-height: 2 !important;
-	
 	cursor: pointer;
 	outline: none !important;
 	box-shadow: none !important;
@@ -441,17 +451,20 @@ input[type="button"] {
 	background: none;
 	padding: .25em 1em;
 	margin: 0 auto;
-	
 	transition: all 150ms ease;
-	
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none; /* Safari */
-	-khtml-user-select: none; /* Konqueror HTML */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer/Edge */
-	user-select: none; /* Non-prefixed version, currently
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+	/* Non-prefixed version, currently
 												supported by Chrome and Opera */
-	
 	&:hover {
 		background: @text-color;
 		color: @verb-primary-1;
@@ -465,11 +478,11 @@ input[type="button"] {
 	}
 	&.solid {
 		background: @accent-color;
-        color:@order-background;
+		color: @order-background;
 		&:hover {
 			background: @text-color;
 		}
-        border:none;
+		border:none;
 	}
 	&.w-100 {
 		width: 100%;
@@ -491,33 +504,36 @@ button[disabled],
 //======================================== Universals
 //========================================
 //========================================
-
 .mobile-hidden {
 	display: none !important;
 	@media (min-width: 48em) {
 		display: inline-block !important;
 	}
 }
+
 .desktop-hidden {
 	@media (min-width: 48em) {
 		display: none !important;
 	}
 }
+
 .image-wrapper,
 .svg-wrapper {
 	max-width: 100%;
 	height: auto;
 	display: inline-block;
-	img, svg {
+	img,
+	svg {
 		width: 100%;
 		display: block;
 		height: auto;
-		}
+	}
 }
 
 .text-right {
 	text-align: right
 }
+
 .text-left {
 	text-align: left
 }
@@ -528,8 +544,8 @@ button[disabled],
 		max-width: 32em;
 	}
 	&.desktop-r {
-		& > * {
-		float: right;
+		&>* {
+			float: right;
 			@media (min-width: 48em) {
 				float: none;
 			}
@@ -591,42 +607,6 @@ button[disabled],
 //======================================== Message Bar & Nav
 //========================================
 //========================================
-
-.message-bar-text {
-	.w-100;
-	display: none;
-	height: 1.5em;
-	z-index: 5000;
-	position: relative;
-	background: none;
-	overflow: hidden;
-	text-align: center;
-	p {
-		display: block;
-		color: @verb-gray-2 !important;
-		padding: 0;
-		margin: 0;
-	}
-	a {
-		text-decoration: underline;
-		font-weight: 400;
-		color: @verb-gray-2 !important;
-	}
-	@media (min-width: 48em) {
-		font-size: 1em;
-		display: block;
-	}
-}
-
-.message-bar {
-	.w-100;
-	.text-center;
-	background: @text-color;
-	font-weight: 400;
-	padding: .25em .25em .2em;
-	height: 1.5em;
-}
-
 nav {
 	.nav-bar {
 		background: @verb-primary-2;
@@ -637,38 +617,30 @@ nav {
 	left: 0;
 	right: 0;
 	height: 5em;
-	
 	overflow: hidden;
 	text-align: right;
-	
 	font-weight: 700;
-	
 	width: 100%;
 	z-index: 1000;
-	
 	-webkit-transition: .25s ease-out;
 	-moz-transition: .25s ease-out;
 	-o-transition: .25s ease-out;
 	transition: .25s ease-out;
-	
-	& > * {
+	&>* {
 		display: inline-block;
 		padding: 0;
 		margin: 0;
 		vertical-align: top;
 	}
-	
 	.logo-container {
 		float: left;
 		margin: .25em 0;
 		display: inline-block;
 	}
-	
 	#main-logo {
 		height: 3em;
 		float: left;
 	}
-	
 	ul.nav-list {
 		list-style: none;
 		text-indent: none;
@@ -680,7 +652,6 @@ nav {
 			display: block;
 			opacity: 0;
 			text-transform: lowercase;
-
 			a,
 			a:visited,
 			a:active {
@@ -688,7 +659,7 @@ nav {
 				font-size: 1.25em;
 				padding: .25em;
 				margin: .25em 0;
-				border-bottom: @stroke-width solid rgba(255,255,255,0);
+				border-bottom: @stroke-width solid rgba(255, 255, 255, 0);
 				-webkit-transition: .25s ease-in-out;
 				-moz-transition: .25s ease-in-out;
 				-o-transition: .25s ease-in-out;
@@ -700,39 +671,39 @@ nav {
 			}
 			&:nth-child(1) a {
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(2) a {
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(3) a {
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(4) a {
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(5) a {
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(1) a:hover {
 				border-bottom-color: @verb-gray-3;
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(2) a:hover {
 				border-bottom-color: @verb-gray-3;
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(3) a:hover {
 				border-bottom-color: @verb-gray-3;
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(4) a:hover {
 				border-bottom-color: @verb-gray-3;
 				color: @verb-gray-4;
-			}			
+			}
 			&:nth-child(5) a:hover {
 				border-bottom-color: @verb-gray-3;
 				color: @verb-gray-4;
-			}			
+			}
 			&.social {
 				a:hover {
 					border: none;
@@ -740,7 +711,6 @@ nav {
 			}
 		}
 	}
-		
 	@media (min-width: 48em) {
 		text-align: left;
 		height: auto;
@@ -748,7 +718,7 @@ nav {
 			height: 4em;
 		}
 		ul.nav-list {
-//			width: auto;
+			//			width: auto;
 			text-align: left;
 			clear: none;
 			li {
@@ -766,17 +736,14 @@ nav {
 			}
 		}
 	}
-	
 	#nav-menu-icon {
 		display: inline-block;
-		
 		width: 2em;
 		height: 1.75em;
 		margin: 0;
 		position: fixed;
 		top: 2.25em;
 		right: .75em;
-
 		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
 		-o-transform: rotate(0deg);
@@ -809,7 +776,6 @@ nav {
 		span:nth-child(4) {
 			top: 80%;
 		}
-		
 		&:hover {
 			span:nth-child(1) {
 				top: 15%;
@@ -822,7 +788,6 @@ nav {
 			display: none;
 		}
 	}
-	
 	.cart-button {
 		padding: .25em;
 		position: fixed;
@@ -830,7 +795,6 @@ nav {
 		right: 5em;
 		width: 5em;
 		height: 3em;
-		
 		-webkit-transition: .25s ease-in-out;
 		-moz-transition: .25s ease-in-out;
 		-o-transition: .25s ease-in-out;
@@ -849,7 +813,6 @@ nav {
 			right: 1em;
 		}
 	}
-	
 	#basket-icon {
 		vertical-align: bottom;
 		text-align: center;
@@ -880,49 +843,42 @@ nav {
 		}
 	}
 }
-	
-nav.menu-show {
 
+nav.menu-show {
 	height: 20em;
 	background: @background-color;
 	border-bottom: @border;
-	
 	@media (min-width: 48em) {
 		height: auto;
 		border-bottom: none;
 	}
-	
 	ul.nav-list li {
 		opacity: 1;
 	}
-  
-  #nav-menu-icon {
-
-    span:nth-child(1) {
-      top: 1em;
-      width: 0%;
-      left: 50%;
-    }
-    span:nth-child(2) {
-      -webkit-transform: rotate(45deg);
-      -moz-transform: rotate(45deg);
-      -o-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-
-    span:nth-child(3) {
-      -webkit-transform: rotate(-45deg);
-      -moz-transform: rotate(-45deg);
-      -o-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-    }
-
-    span:nth-child(4) {
-      top: 1em;
-      width: 0%;
-      left: 50%;
-    }
-  }
+	#nav-menu-icon {
+		span:nth-child(1) {
+			top: 1em;
+			width: 0%;
+			left: 50%;
+		}
+		span:nth-child(2) {
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		span:nth-child(3) {
+			-webkit-transform: rotate(-45deg);
+			-moz-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+		span:nth-child(4) {
+			top: 1em;
+			width: 0%;
+			left: 50%;
+		}
+	}
 }
 
 //========================================
@@ -930,25 +886,27 @@ nav.menu-show {
 //======================================== Header
 //========================================
 //========================================
-
 #feels-good {
 	&:before {
 		content: url(../svg/sun.svg);
 		bottom: -.1em;
 	}
 }
+
 #tastes-good {
 	&:before {
 		content: url(../svg/cocoa.svg);
 		bottom: -.5em;
 	}
 }
+
 #is-good {
 	&:before {
 		content: url(../svg/green-tea.svg);
 		bottom: -.1em;
 	}
 }
+
 #feels-good,
 #tastes-good,
 #is-good {
@@ -979,12 +937,11 @@ nav.menu-show {
 	}
 }
 
-.try-button {
-}
+.try-button {}
 
 #line-1 {
 	transition-delay: .5s;
-    padding: 0 !important;
+	padding: 0 !important;
 }
 
 #line-2 {
@@ -1053,60 +1010,64 @@ header {
 				top: -2em;
 			}
 		}
-//		&:hover {
-//			.bar-rendering {
-//				top: 1em;
-//			}
-//			.shadow {
-//				transform: scale(1.07, 1.07)
-//			}
-//		}
+		//		&:hover {
+		//			.bar-rendering {
+		//				top: 1em;
+		//			}
+		//			.shadow {
+		//				transform: scale(1.07, 1.07)
+		//			}
+		//		}
 	}
 	@media (min-width: 48em) {
 		h1 {
 			font-size: 3.5em;
 			padding-top: 1em;
 		}
-  }
-//	@media (min-width: 60em) {
-//		h1 {
-//			font-size: 4.5em;
-//			&:first-child {
-//				font-size: 5em;
-//			}
-//		}
-//  }
+	}
+	//	@media (min-width: 60em) {
+	//		h1 {
+	//			font-size: 4.5em;
+	//			&:first-child {
+	//				font-size: 5em;
+	//			}
+	//		}
+	//  }
 }
 
 #top {
-  padding-top: 8em;
+	padding-top: 8em;
 }
+
 #ourStory {
-  padding-top: 8em;
-//    p{
-//        
-//        text-align: center;
-//        margin-left:1em;
-//        margin-right:1em;
-//    }
+	padding-top: 8em;
+	//    p{
+	//        
+	//        text-align: center;
+	//        margin-left:1em;
+	//        margin-right:1em;
+	//    }
 }
-.timeline-dates{
-    text-align: left;
+
+.timeline-dates {
+	text-align: left;
 }
-.storyLeft{
-    float:left;
-    width:50%;
+
+.storyLeft {
+	float: left;
+	width: 50%;
 }
-.story-main-line{
-    font-size:1.25em;
-    font-weight: bold;
+
+.story-main-line {
+	font-size: 1.25em;
+	font-weight: bold;
 }
+
 //========================================
 //========================================
 //======================================== Photo-Row
 //========================================
 //========================================
-
 #TheVerbLife {
 	position: absolute;
 	display: block;
@@ -1139,7 +1100,6 @@ header {
 //======================================== About Verb
 //========================================
 //========================================
-
 #AboutVerb {
 	background: @verb-primary-2;
 }
@@ -1149,7 +1109,6 @@ header {
 //======================================== Verb vs.
 //========================================
 //========================================
-
 #bad-energy {
 	display: inline-block;
 	vertical-align: top;
@@ -1162,7 +1121,8 @@ header {
 		display: inline-block;
 		margin: 0;
 	}
-	p, h3 {
+	p,
+	h3 {
 		display: block;
 		width: 100%;
 		padding: 0;
@@ -1190,8 +1150,7 @@ header {
 	@media (min-width: 48em) {
 		padding: 0 0;
 	}
-	
-	> * {
+	>* {
 		stroke: @text-color;
 		stroke-miterlimit: 10;
 		stroke-width: @stroke-width;
@@ -1200,7 +1159,6 @@ header {
 			stroke: @verb-gray-2;
 		}
 	}
-	
 	.active {
 		&:hover {
 			stroke: @verb-gray-4;
@@ -1243,13 +1201,13 @@ header {
 //======================================== In the Wild
 //========================================
 //========================================
-
 #vignette-1 {
 	background: @verb-primary-1;
 	.container {
 		padding-top: 6em;
 	}
 }
+
 #vignette-2 {
 	background: @verb-yellow-1;
 	.container {
@@ -1262,7 +1220,6 @@ header {
 //======================================== Pull-Quotes
 //========================================
 //========================================
-
 #PullQuotes {
 	background: @verb-black;
 	color: @verb-primary-5;
@@ -1301,7 +1258,7 @@ header {
 			text-align: center;
 			height: 100%;
 			q:before,
-			q:after { 
+			q:after {
 				font-size: 4em;
 				position: absolute;
 				opacity: .2;
@@ -1310,7 +1267,7 @@ header {
 				left: 0;
 				bottom: 30%;
 			}
-			q:after{
+			q:after {
 				right: 0;
 				top: 30%;
 			}
@@ -1331,7 +1288,6 @@ header {
 //======================================== The Secret
 //========================================
 //========================================
-
 #theSecret {
 	.pull-quote {
 		text-align: center;
@@ -1344,6 +1300,7 @@ header {
 	height: .75em;
 	display: inline-block;
 }
+
 #organic-icon {
 	stroke: @verb-green;
 }
@@ -1353,7 +1310,6 @@ header {
 //======================================== The Energy
 //========================================
 //========================================
-
 #TheEnergy {
 	background: @background-color;
 }
@@ -1363,20 +1319,18 @@ header {
 //======================================== Order Verb
 //========================================
 //========================================
-
 @order-background: @verb-primary-1;
-
 #OrderVerb {
 	background: @order-background;
-	
-	.order-bar-image {
-		vertical-align: center;
-		img {
-			max-width: 100%;
-			width: 100%;
-		}
-	}
 	padding-bottom: 2em;
+}
+
+.order-bar-image {
+	vertical-align: center;
+	img {
+		max-width: 100%;
+		width: 100%;
+	}
 }
 
 .order-items {
@@ -1386,7 +1340,7 @@ header {
 	h2 {
 		text-align: left;
 	}
-	& > div {
+	&>div {
 		max-width: 20em;
 		margin-right: auto;
 		margin-left: auto;
@@ -1430,46 +1384,52 @@ header {
 }
 
 .trial-price-container,
-.monthly-price-container, {
+.monthly-price-container,
+{
 	width: 50%;
-	height: 10em;
+	height: 2em;
 	display: inline-block;
 	vertical-align: top;
 	margin: 1em auto .5em;
 }
-.single-price{
-    margin: 1em auto .5em;
-    height:2em;
-    
+
+.single-price {
+	margin: 1em auto .5em;
+	height: 2em;
 }
 
 .trial-price-container {
-//	border-right: @border;
-//	position: relative;
-//	right: -2px;
+	//	border-right: @border;
+	//	position: relative;
+	//	right: -2px;
 	color: @accent-color;
 }
 
-//.price {
-//	font-size: 2.5em;
-//	font-weight: 700;
-//	&:after {
-//		content: '/ bar';
-//		font-size: .4em;
-//		font-weight: 700;
-//	}
-//}
-.firstmonth {
-    font-size: 2.5em;
+.price {
+	font-size: 2.5em;
 	font-weight: 700;
-    &:after {
+	&:after {
+		content: '/ bar';
+		font-size: .4em;
+		font-weight: 700;
+	}
+}
+
+.firstmonth {
+	font-size: 2.5em;
+	font-weight: 700;
+	&:after {
 		content: '/ bar first month';
 		font-size: .4em;
 		font-weight: 700;
 	}
 }
+
 .thereafter {
-    &:after {
+	padding-top: 1em;
+	font-size: 2em;
+	color: @verb-black;
+	&:after {
 		content: '/ bar thereafter';
 		font-size: .4em;
 		font-weight: 700;
@@ -1477,14 +1437,14 @@ header {
 }
 
 .sub-price {
-//	.price;
+	.price;
 	padding: .5em 0 0;
 	margin: 0;
 	line-height: .5;
 }
 
 .single-price {
-//	.price;
+	.price;
 	color: @accent-color;
 }
 
@@ -1495,6 +1455,7 @@ header {
 	margin: 0;
 	padding: 0;
 	line-height: 1;
+	color: @verb-black;
 }
 
 .subscription-select {
@@ -1589,22 +1550,20 @@ header {
 	}
 }
 
-.subpercent{
-    color: @verb-red;
-    padding-left:0.3em;
+.subpercent {
+	color: @verb-red;
+	padding-left: 0.3em;
 }
 
-.active-select{
-    display: block;
+.active-select {
+	display: block;
 }
-
-
 
 #sub-price-discount {
 	font-weight: 400;
 	font-size: .6em;
 	vertical-align: top;
-  color:red;
+	color: red;
 }
 
 .sale-price {
@@ -1617,12 +1576,12 @@ header {
 }
 
 .quantity-select {
-//	padding-top:1.7em;
-	padding-bottom:2.15em;
-	display:none;
+	//	padding-top:1.7em;
+	padding-bottom: 2.15em;
+	//	display: none;
 	margin: 1em 0;
 	text-align: center;
-	> * {
+	>* {
 		display: inline-block;
 	}
 	.button {
@@ -1649,9 +1608,9 @@ header {
 		left: .5em;
 		display: inline;
 	}
-//	.cur-quant.plural:after {
-//		content: 'bars';
-//	}
+	//	.cur-quant.plural:after {
+	//		content: 'bars';
+	//	}
 	.cur-quant.three-bar:after {
 		content: '3-pack';
 	}
@@ -1660,13 +1619,11 @@ header {
 	}
 }
 
-
 //========================================
 //========================================
 //======================================== FAQ
 //========================================
 //========================================
-
 #FAQ {
 	background: @verb-primary-1;
 }
@@ -1727,10 +1684,8 @@ header {
 	display: inline-block;
 	position: absolute;
 	z-index: 2;
-	
 	border-right: @border;
 	border-bottom: @border;
-	
 	transform: rotate(45deg);
 	-webkit-transition: .25s ease-out;
 	-moz-transition: .25s ease-out;
@@ -1755,8 +1710,6 @@ header {
 	right: .4em;
 }
 
-
-
 .faq-title.open-question:after,
 .accordion-button.open-section:after {
 	transform: rotate(-135deg);
@@ -1776,12 +1729,11 @@ header {
 //======================================== Reviews
 //========================================
 //========================================
-
 #Reviews {
 	min-height: 90%;
 	background: @verb-primary-1;
 	.desktop-l {
-		& > div {
+		&>div {
 			max-width: 24em;
 			margin-right: auto;
 			margin-left: auto;
@@ -1806,7 +1758,7 @@ header {
 	margin: .25em 0;
 	text-align: left;
 	padding-left: 2em;
-	@media (min-width:48em) {
+	@media (min-width: 48em) {
 		padding-left: 0;
 	}
 	span {
@@ -1826,13 +1778,14 @@ header {
 		display: inline-block;
 		background: @verb-primary-1;
 		border: @border;
-        .fill-bar{
-            background-color: @verb-yellow-2;
-            height: 100%;
-            width:0%;
-        }
+		.fill-bar {
+			background-color: @verb-yellow-2;
+			height: 100%;
+			width: 0%;
+		}
 	}
 }
+
 .review-percentage-wrapper {
 	text-align: center;
 }
@@ -1843,6 +1796,7 @@ header {
 		text-align: left;
 	}
 }
+
 #reviewBtn {
 	max-width: 22em;
 	width: 100%;
@@ -1855,10 +1809,11 @@ header {
 #reviewTable-wrap {
 	display: block;
 	width: 100%;
-	overflow-wrap:break-word; 
-	word-wrap:break-word;
-	hypens:auto;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	hypens: auto;
 }
+
 .review-stars {
 	color: @verb-yellow-2;
 }
@@ -1880,40 +1835,40 @@ header {
 }
 
 .avg-rating-stars {
-  unicode-bidi: bidi-override;
-  color: @verb-primary-3;
-  font-size: 2em;
-  height: 1.5em;
-  width: 5em;
-  position: relative;
-  padding: 0;
+	unicode-bidi: bidi-override;
+	color: @verb-primary-3;
+	font-size: 2em;
+	height: 1.5em;
+	width: 5em;
+	position: relative;
+	padding: 0;
 	margin: 0 auto;
 	@media (min-width: 48em) {
 		margin: 0;
 	}
-  
-  &-top {
-    color: @verb-yellow-2;
-    padding: 0;
-    position: absolute;
-    z-index: 1;
-    display: block;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-  }
-  &-bottom {
-    padding: 0;
-    display: block;
-    z-index: 0;
-  }
+	&-top {
+		color: @verb-yellow-2;
+		padding: 0;
+		position: absolute;
+		z-index: 1;
+		display: block;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+	}
+	&-bottom {
+		padding: 0;
+		display: block;
+		z-index: 0;
+	}
 }
 
 .reviews-button-group {
 	font-size: .75em;
 	text-align: center;
 	margin: .25em 0;
-	button, span {
+	button,
+	span {
 		text-align: center;
 	}
 	@media (min-width: 48em) {
@@ -1956,6 +1911,7 @@ header {
 		background: none;
 	}
 }
+
 #firstPageBtn {
 	&:before,
 	&:after {
@@ -1963,6 +1919,7 @@ header {
 		transform: rotate(-45deg);
 	}
 }
+
 #lastPageBtn {
 	&:before,
 	&:after {
@@ -1970,6 +1927,7 @@ header {
 		transform: rotate(135deg);
 	}
 }
+
 #prevPageBtn {
 	&:before {
 		display: inline-block;
@@ -1979,6 +1937,7 @@ header {
 		display: none;
 	}
 }
+
 #nextPageBtn {
 	&:after {
 		display: inline-block;
@@ -1989,13 +1948,11 @@ header {
 	}
 }
 
-
 //========================================
 //========================================
 //======================================== Forms
 //========================================
 //========================================
-
 .input-row {
 	width: 100%;
 	display: block;
@@ -2029,25 +1986,22 @@ input[type="password"] {
 	box-shadow: none;
 	margin-bottom: 1em;
 	margin-top: .25em;
-	
 	border: @border;
 	padding-right: .5em;
 	padding-left: .5em;
 	width: 100%;
-	
 	font-size: 1.25em;
 	border: @border;
-	
 	&::-webkit-input-placeholder {
 		color: @verb-gray-2;
 	}
-	&::-moz-placeholder { 
+	&::-moz-placeholder {
 		color: @verb-gray-2;
 	}
-	&:-ms-input-placeholder { 
+	&:-ms-input-placeholder {
 		color: @verb-gray-2;
 	}
-	&:-moz-placeholder { 
+	&:-moz-placeholder {
 		color: @verb-gray-2;
 	}
 	&.big-input {
@@ -2064,21 +2018,22 @@ input[type="password"] {
 	}
 }
 
-textarea{
-  resize: vertical;
+textarea {
+	resize: vertical;
 	height: 8em;
 	padding: .25em;
 }
 
 .antispam {
-   display: none !important;
+	display: none !important;
 }
+
 
 /* Custom Checkbox */
 
 .checkbox {
-  position: relative;
-  margin: 1em 0;
+	position: relative;
+	margin: 1em 0;
 	label {
 		cursor: pointer;
 		position: absolute;
@@ -2105,17 +2060,21 @@ textarea{
 		margin-left: 1em;
 	}
 }
+
+
 /* Create the hover event of the tick */
 
 .checkbox label:hover::after {
-  opacity: .3;
+	opacity: .3;
 }
+
 
 /* Create the checkbox state for the tick */
 
-.checkbox input[type=checkbox]:checked + label:after {
-  opacity: 1;
+.checkbox input[type=checkbox]:checked+label:after {
+	opacity: 1;
 }
+
 
 /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
    follow these rules. Every browser that supports :checked also supports :not(), so
@@ -2147,36 +2106,38 @@ textarea{
 	font-size: 2em;
 	color: @text-color;
 }
-.rating:not(:checked) > label:before {
+
+.rating:not(:checked)>label:before {
 	content: '☆ ';
 }
-.rating > input:checked ~ label:before,
-.rating:not(:checked) > label:hover ~ label:before,
-.rating:not(:checked) > label:hover:before {
+
+.rating>input:checked~label:before,
+.rating:not(:checked)>label:hover~label:before,
+.rating:not(:checked)>label:hover:before {
 	content: '★ ';
 }
 
-.rating > input:checked ~ label {
+.rating>input:checked~label {
 	color: @verb-yellow-2;
 }
 
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
 	color: @verb-yellow;
 }
 
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
+.rating>input:checked+label:hover,
+.rating>input:checked+label:hover~label,
+.rating>input:checked~label:hover,
+.rating>input:checked~label:hover~label,
+.rating>label:hover~input:checked~label {
 	color: @verb-yellow-2;
 }
 
-.rating > label:active {
-    position: relative;
-    top: 2px;
-    left: 2px;
+.rating>label:active {
+	position: relative;
+	top: 2px;
+	left: 2px;
 }
 
 .modal {
@@ -2185,23 +2146,27 @@ textarea{
 	z-index: 10000;
 	left: 0;
 	top: 0;
-	width:100%;
-	height:100%;
+	width: 100%;
+	height: 100%;
 	overflow: auto;
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Black w/ opacity */
 }
+
 .modal-content {
 	background-color: @verb-primary-1;
-	margin: 1em auto auto; 
+	margin: 1em auto auto;
 	padding: 1em 2em;
 	width: 90%;
 	clear: both;
-	@media (min-width:48em){            
-		width: 90%; 
+	@media (min-width: 48em) {
+		width: 90%;
 		max-width: 48em;
 	}
 }
+
 .close {
 	height: 2em;
 	float: right;
@@ -2226,19 +2191,18 @@ textarea{
 	}
 	&:hover,
 	&:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-	}	
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
+	}
 }
 
-
-
-#replacement-content{
-    display:none;
+#replacement-content {
+	display: none;
 }
-#recency{
-    display: none;
+
+#recency {
+	display: none;
 }
 
 //========================================
@@ -2246,7 +2210,6 @@ textarea{
 //======================================== Our Story
 //========================================
 //========================================
-
 #OurStory {
 	background: @verb-primary-3;
 }
@@ -2256,7 +2219,6 @@ textarea{
 //======================================== Email Form
 //========================================
 //========================================
-
 #WhatsYourVerb {
 	background: @verb-primary-1;
 }
@@ -2307,7 +2269,6 @@ textarea{
 //======================================== Footer
 //========================================
 //========================================
-
 footer {
 	background: @verb-black;
 	color: @verb-gray-2;
@@ -2322,10 +2283,12 @@ footer {
 		text-align: left;
 	}
 }
+
 #footer-logo {
 	max-width: 8em;
 	margin: 0 auto;
 }
+
 
 /* PAGE ALERT CSS */
 
@@ -2363,9 +2326,8 @@ footer {
 //======================================== Office Ordering
 //========================================
 //========================================
-
 #officeBarQuantity {
-  display: none;
+	display: none;
 }
 
 #corporateQuant {
@@ -2373,114 +2335,155 @@ footer {
 		display: block;
 	}
 }
-.officeOrdering{
-  input,
-  button {
-    margin-left: 0;
-    margin-top: .5em;
-  }
-  .active{
-    background: @text-color;
-    color: @verb-primary-2;
-  }
-  .disabled{
-    background:@verb-primary-2;
-    color:@text-color;
-    opacity:0.3;
-  }
-  .disabled:hover{
-    background:@verb-primary-2;
-    color:@text-color;
-    opacity:0.3;
-    cursor:default;
-  }
-}
 
-#officeSuggestions {
-    th, td {
-      text-align: center;
-      padding: .25em 1.25em .25em 0;
-    }
-    margin-bottom: 1em;
-}
-
-
-.officeOrdering{
-    width:100%;
-    div{
-        padding:0.5em;
-    }
-    
-    input[type=number]{
-        background:none;
-        border: @border;
-        border-top:none;
-        border-left: none;
-        border-right:none;
-//        height:3em;
-
-        
-        font-family: inherit;
-        font-weight: 700;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 1em;
-        line-height: 2 !important;
-        
-    }
-    td{
-//        width:1%;
-    }
-    
-    .officeOrderBtns{
-      padding-left: 0;
-        width:100%;
-        button, input{
-            width: 100%;
-            font-size: 1em;
-          @media (min-width: 48em) {
-            width: 48%;
-            min-width: 12em;
-          }
-        }
-    }
-}
-.officeBigDiv{
-    width:100%;
-    margin:0 auto;
-    font-size:.8em;
-    .officeOrdering{
-        input{
-            font-size:0.9em;
-        }
-    }
-    @media (min-width: 80em) {
-		width:60%;
-        font-size:1em;
-        .officeOrdering{
-            input{
-                font-size:1em;
-            }
-        }
+.officeOrdering {
+	input,
+	button {
+		margin-left: 0;
+		margin-top: .5em;
+	}
+	.active {
+		background: @text-color;
+		color: @verb-primary-2;
+	}
+	.disabled {
+		background: @verb-primary-2;
+		color: @text-color;
+		opacity: 0.3;
+	}
+	.disabled:hover {
+		background: @verb-primary-2;
+		color: @text-color;
+		opacity: 0.3;
+		cursor: default;
 	}
 }
 
-.quote{
-    opacity: 0.5;
+#officeSuggestions {
+	th,
+	td {
+		text-align: center;
+		padding: .25em 1.25em .25em 0;
+	}
+	margin-bottom: 1em;
 }
 
-.quote-text, .quote-author {
-//    width:100%;
-    text-align: right;
-//    font-style: italic;
+.officeOrdering {
+	width: 100%;
+	div {
+		padding: 0.5em;
+	}
+	input[type=number] {
+		background: none;
+		border: @border;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		//        height:3em;
+		font-family: inherit;
+		font-weight: 700;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1em;
+		line-height: 2 !important;
+	}
+	td {
+		//        width:1%;
+	}
+	.officeOrderBtns {
+		padding-left: 0;
+		width: 100%;
+		button,
+		input {
+			width: 100%;
+			font-size: 1em;
+			@media (min-width: 48em) {
+				width: 48%;
+				min-width: 12em;
+			}
+		}
+	}
+}
+
+.officeBigDiv {
+	width: 100%;
+	margin: 0 auto;
+	font-size: .8em;
+	.officeOrdering {
+		input {
+			font-size: 0.9em;
+		}
+	}
+	@media (min-width: 80em) {
+		width: 60%;
+		font-size: 1em;
+		.officeOrdering {
+			input {
+				font-size: 1em;
+			}
+		}
+	}
+}
+
+.quote {
+	opacity: 0.5;
+}
+
+.quote-text,
+.quote-author {
+	//    width:100%;
+	text-align: right;
+	//    font-style: italic;
 }
 
 .margin-top-neg-five {
-    margin-top:-5%;
+	margin-top: -5%;
 }
 
-.office-promo{
-    margin-top:2em;
-    color:@verb-green-2;
-    
+.office-promo {
+	margin-top: 2em;
+	color: @verb-green-2;
+}
+
+.orderOneTime {
+	margin-top: 5em!important;
+}
+
+oneTimeQuantity-increment {
+	visibility: visible;
+	display: block;
+}
+
+.subscription-pricing span {}
+
+#first-month-subscription-pricing {
+	color: #369638;
+}
+
+.sub-priceperbar {
+	font-size: 2em;
+	font-size: 2.5em;
+	font-weight: 700;
+	margin: 0;
+}
+
+.sub-priceperbar:after {
+	content: '/ bar';
+	font-size: .4em;
+	font-weight: 700;
+}
+
+.sub-month-header {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	color: black;
+}
+
+.left-align {
+	text-align: left;
+}
+
+.opacity-fifty {
+	opacity: 0.5;
 }
