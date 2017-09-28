@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
 	
-	<script src="https://cdn.optimizely.com/js/8794714060.js"></script>
-	
   <meta charset="utf-8">
   <title>Verb Energy</title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport' />
@@ -80,6 +78,9 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+	
+	<!-- Optimizely -->
+	<script src="https://cdn.optimizely.com/js/8794714060.js"></script>
 	
 	<!-- Mixpanel -->
   <script type="text/javascript">
@@ -611,9 +612,9 @@
                 <span class="hidden-sub-price">$1.70<span class="subpercent hidden">30%</span></span>
                 <span class="box-quantity hidden">3</span>
                 <span class="subid hidden">.triple-sub</span>
--->
+
                 
-            </button>
+            </button>-->
 			</div>
 <!--
 			<div class="quantity-select">
@@ -1102,18 +1103,20 @@
         </div>
       </div>
   </footer>
-  <!-- SCRIPTS -->
+	<!-- HubSpot -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3888584.js"></script>
+
+  <!-- Snipcart -->
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<!--  LIVE -->
-    <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="MTE1MGFiZWMtODA5Mi00ZTFiLTk2NDItYjNhZjdlMmFiZjU4NjM2MjEwNjcxMTA3MDY1MjMy" ></script>
-<!--TEST-->   
-<!--    <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="N2ExMzA2OTktMTIyMi00NDYxLTk4YTMtMmMyNjVlM2VhODNkNjM2MjEwNjcxMTA3MDY1MjMy"></script>-->
-<!--  <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />-->
-	
+		<!--  LIVE -->
+		<script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="MTE1MGFiZWMtODA5Mi00ZTFiLTk2NDItYjNhZjdlMmFiZjU4NjM2MjEwNjcxMTA3MDY1MjMy" ></script>
+		<!--TEST-->   
+		<!--    <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="N2ExMzA2OTktMTIyMi00NDYxLTk4YTMtMmMyNjVlM2VhODNkNjM2MjEwNjcxMTA3MDY1MjMy"></script>-->
+		<!--  <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />-->
+
   <!-- CUSTOM JS -->
 	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
   <script src="public/js/main_v1.3.js"></script>
-<!--  <script src="public/js/firebasereviews.js"></script>-->
   <script>
     Snipcart.subscribe('item.added', function(item) {
       fbq('track', 'AddToCart', {
@@ -1185,13 +1188,13 @@
         });
     });
   </script>
-    <script id="cart-content-text" type="text/template">
-        <div class="custom-snipcart-footer-text">
-        <h2>For Verb Subscribers</h2>
-        <p>
-            By clicking “Place Order”, you accept our <a href="/VerbEnergyTermsAndConditions.pdf" target="_blank">terms</a> and your subscription will renew monthly and you will be charged the monthly subscription fees until you cancel. Subscriptions purchased at a promotional or trial rate will be billed the full monthly amount 30 days after the trial begins. After 30 days, your subscription will officially begin. After the first 30 days, you must cancel before the day of the month on which the subscription officially began. The monthly charge may change if you change your membership or we change our prices or shipping (with notice to you). Cancel anytime by emailing us at team@verbenergybar.com. 
-      </p>
-        </div>
-      </script>
+	<script id="cart-content-text" type="text/template">
+		<div class="custom-snipcart-footer-text">
+		<h2>For Verb Subscribers</h2>
+		<p>
+				By clicking “Place Order”, you accept our <a href="/VerbEnergyTermsAndConditions.pdf" target="_blank">terms</a> and your subscription will renew monthly and you will be charged the monthly subscription fees until you cancel. Subscriptions purchased at a promotional or trial rate will be billed the full monthly amount 30 days after the trial begins. After 30 days, your subscription will officially begin. After the first 30 days, you must cancel before the day of the month on which the subscription officially began. The monthly charge may change if you change your membership or we change our prices or shipping (with notice to you). Cancel anytime by emailing us at team@verbenergybar.com. 
+		</p>
+		</div>
+		</script>
 </body>
 </html>

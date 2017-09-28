@@ -764,6 +764,7 @@ button[disabled]:hover,
 }
 nav {
   position: fixed;
+  border-top: 1em solid #1d1d20;
   top: 0;
   left: 0;
   right: 0;
@@ -780,7 +781,7 @@ nav {
 }
 nav .nav-bar {
   background: #ffeac7;
-  padding-bottom: .5em;
+  padding: .5em;
 }
 nav > * {
   display: inline-block;
