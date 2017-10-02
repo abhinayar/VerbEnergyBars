@@ -220,23 +220,23 @@ $(document).ready(function(){
             if(!$("#snipcart-main-content").find(".custom-snipcart-footer-text")['length']){
                 $(html).insertBefore($("#snipcart-footer"));
             }
-            $(".snip-product__name").each(function(idx){
-
-                if($(this).text().includes("First Month Discounted")){
-                    $(this).append("<p style='font-size:0.7em;color:gray;'>$1 / bar First Month</p>");
-                    if($(this).text().includes("10 Bar")){
-                        $(this).append("<p style='font-size:0.7em;color:gray;'>$2.20 / bar thereafter</p>");
-                    }
-                    if($(this).text().includes("20 Bar")){
-                        $(this).append("<p style='font-size:0.7em;color:gray;'>$2.00 / bar thereafter</p>");
-                    }
-                    if($(this).text().includes("30+ Bar")){
-                        $(this).append("<p style='font-size:0.7em;color:gray;'>$1.80 / bar thereafter</p>");
-                    }
-                }
-                
-                
-            });
+//            $(".snip-product__name").each(function(idx){
+//
+//                if($(this).text().includes("First Month Discounted")){
+//                    $(this).append("<p style='font-size:0.7em;color:gray;'>$1 / bar First Month</p>");
+//                    if($(this).text().includes("10 Bar")){
+//                        $(this).append("<p style='font-size:0.7em;color:gray;'>$2.20 / bar thereafter</p>");
+//                    }
+//                    if($(this).text().includes("20 Bar")){
+//                        $(this).append("<p style='font-size:0.7em;color:gray;'>$2.00 / bar thereafter</p>");
+//                    }
+//                    if($(this).text().includes("30+ Bar")){
+//                        $(this).append("<p style='font-size:0.7em;color:gray;'>$1.80 / bar thereafter</p>");
+//                    }
+//                }
+//                
+//                
+//            });
     
         });
         Snipcart.subscribe('cart.closed', function() {
@@ -256,16 +256,16 @@ $(document).ready(function(){
                     var children = $(this).children();
                    if($(children[0]).text().includes("First Month Discounted")){
                        var planType = $(children[0]).text().trim().substr(0,2);
-                       var planQuantity = $($("#snipcart-plans-list").children()[idx]).find(".snip-quantity-trigger__text").text();
+//                       var planQuantity = $($("#snipcart-plans-list").children()[idx]).find(".snip-quantity-trigger__text").text();
                        
-                       var discountPlan = $($("#snipcart-plans-list").children()[idx]).children();
+//                       var discountPlan = $($("#snipcart-plans-list").children()[idx]).children();
+//                       
+//                       var newPer = $(discountPlan[2]).text().replace(" / month","");
+//                       var newTotal = $(discountPlan[3]).text().replace(" / month","");
+//                       $(discountPlan[2]).text(newPer);
+//                       $(discountPlan[3]).text(newTotal);
                        
-                       var newPer = $(discountPlan[2]).text().replace(" / month","");
-                       var newTotal = $(discountPlan[3]).text().replace(" / month","");
-                       $(discountPlan[2]).text(newPer);
-                       $(discountPlan[3]).text(newTotal);
-                       
-                       $(children[2]).text("$"+planRates[planType]*planQuantity+".00");
+                       $(children[2]).text("$"+planRates[planType]+".00");
                         
                    }
                 });
