@@ -244,8 +244,8 @@ $(document).ready(function(){
         });
         var planRates = {
             10 : 22.00,
-            20 : 20.00,
-            30 : 18.00
+            20 : 40.00,
+            30 : 54.00
         }
 
         Snipcart.subscribe('page.changed', function (page) {
@@ -254,8 +254,9 @@ $(document).ready(function(){
                 $("#snipcart-upcoming-payments-list .snip-table .snip-table__body tr").each(function(idx){
 
                     var children = $(this).children();
-                   if($(children[0]).text().includes("First Month Discounted")){
+//                   if($(children[0]).text().includes("First Month Discounted")){
                        var planType = $(children[0]).text().trim().substr(0,2);
+                    console.log(planType);
 //                       var planQuantity = $($("#snipcart-plans-list").children()[idx]).find(".snip-quantity-trigger__text").text();
                        
 //                       var discountPlan = $($("#snipcart-plans-list").children()[idx]).children();
@@ -267,7 +268,7 @@ $(document).ready(function(){
                        
                        $(children[2]).text("$"+planRates[planType]+".00");
                         
-                   }
+//                   }
                 });
             }
             setTimeout(customPageChange, 150);
