@@ -1210,7 +1210,10 @@
 
     });
     Snipcart.subscribe('page.change', function(page) {
-      fbq('track', 'InitiateCheckout');
+        console.log(page);
+        if(page=='billing-address'){
+            fbq('track', 'InitiateCheckout');   
+        }
     });
     Snipcart.subscribe('billingaddress.changed', function(address) {
       console.log(address);
@@ -1246,7 +1249,7 @@
           "Items" : cart['items'],
           "Plans" : cart['plans']
         }]);
-        
+                
     }); 
       Snipcart.subscribe('shippingaddress.changed', function(address) {
       console.log(address);
